@@ -11,10 +11,19 @@ Install:
   pip3 install numpy scipy matplotlib imageio imageio[ffmpeg]
 
 ...........NOTES on design of this code.......................
-Brendan: "It seems that code "model_g_2d_xy_vortical_plus__4f.py" (attached), when run for no vortical motion, does not produce the soliton particle well. It's kind of fuzzy and disappears towards the end of the animation. Can you remake it again from "model_g_2d_xy_safe__2a.py" attached here. "model_g_2d_xy_safe__2a.py" is the Model G in 2D only, that works well. Can you adapt it to include vortical motion and no vortical motion options, similar to what you did in "model_g_2d_xy_vortical_plus__4f.py" (attached), but with corrections made as described here? Also, can you include a constant z-axis (not a changing one) for the 4 plots; and make the quiver arrows in it (the 4th plot), all the same size and the magnitude of the arrows indicated by color?"
+Brendan: "It seems that code "model_g_2d_xy_vortical_plus__4f.py" (attached), when run for 
+no vortical motion, does not produce the soliton particle well. It's kind of fuzzy and disappears 
+towards the end of the animation. Can you remake it again from "model_g_2d_xy_safe__2a.py" attached 
+here. "model_g_2d_xy_safe__2a.py" is the Model G in 2D only, that works well. Can you adapt it to 
+include vortical motion and no vortical motion options, similar to what you did in 
+"model_g_2d_xy_vortical_plus__4f.py" (attached), but with corrections made as described here? Also, 
+can you include a constant z-axis (not a changing one) for the 4 plots; and make the quiver arrows 
+in it (the 4th plot), all the same size and the magnitude of the arrows indicated by color?"
 Thought for 3m 6s
 
-Yep — I rebuilt it from your working baseline model_g_2d_xy_safe__2a.py, and then added vortical motion as an option, while ensuring that --no_vort runs the same “safe” reaction–diffusion evolution (so it shouldn’t go fuzzy / disappear like the spectral version did).
+Yep — I rebuilt it from your working baseline model_g_2d_xy_safe__2a.py, and then added vortical 
+motion as an option, while ensuring that --no_vort runs the same “safe” reaction–diffusion 
+evolution (so it shouldn’t go fuzzy / disappear like the spectral version did).
 
 I also added:
 
@@ -205,9 +214,11 @@ model_g_2d_xy_safe_plus_vort__1a
 
 A soliton particle doesn’t usually pop out of nowhere; you “kick” the system.
 
-chi_xy_t(t) builds a Gaussian blob in space (centered at (0,0) by default), multiplied by a Gaussian in time centered at Tseed.
+chi_xy_t(t) builds a Gaussian blob in space (centered at (0,0) by default), multiplied by a Gaussian 
+in time centered at Tseed.
 
-It returns a negative forcing term, so around t ≈ Tseed it perturbs the fields and helps the particle nucleate. 
+It returns a negative forcing term, so around t ≈ Tseed it perturbs the fields and helps the 
+particle nucleate. 
 
 model_g_2d_xy_safe_plus_vort__1a
 
@@ -227,7 +238,8 @@ model_g_2d_xy_safe_plus_vort__1a
 
 9) The Model-G chemistry/reaction part
 
-reaction_terms(pG,pX,pY,forcing) computes the local nonlinear reactions (no diffusion, no advection—just the pointwise kinetics).
+reaction_terms(pG,pX,pY,forcing) computes the local nonlinear reactions (no diffusion, 
+no advection—just the pointwise kinetics).
 
 It:
 
