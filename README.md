@@ -6,7 +6,7 @@ A Tkinter GUI wrapper for Brendan's solver:
 
 Run with:
 
-python3 model_g_2d_vortex_finder_gui__1k_step_commented.py
+    python3 model_g_2d_vortex_finder_gui__1k_step_commented.py
 
 Tested for: Ubuntu 24.04.3 LTS on i7-4790 (Optiplex 7020/9020), Python 3.10+
 
