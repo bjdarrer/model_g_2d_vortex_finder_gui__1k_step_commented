@@ -21,6 +21,8 @@ can you include a constant z-axis (not a changing one) for the 4 plots; and make
 in it (the 4th plot), all the same size and the magnitude of the arrows indicated by color?"
 Thought for 3m 6s
 
+ChatGPT 5.2:
+
 Yep — I rebuilt it from your working baseline model_g_2d_xy_safe__2a.py, and then added vortical 
 motion as an option, while ensuring that --no_vort runs the same “safe” reaction–diffusion 
 evolution (so it shouldn’t go fuzzy / disappear like the spectral version did).
